@@ -36,11 +36,15 @@ function Consoles() {
   }
 
   if (consoles.length === 0) {
-    return <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} />;
+    return (
+      <div className="container-fluid d-flex justify-content-center align-items-center vh-100">
+        <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} />
+      </div>
+    );
   }
 
   return (
-    <div className="container-fluid vh-100">
+    <div className="container-sm vh-100">
       <div className="row pt-5">
         {consoles.map(function (console) {
           return (
