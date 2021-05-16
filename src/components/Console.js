@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import Loader from "react-loader-spinner";
 
 function Console(props) {
   const [console, setConsole] = useState(null);
@@ -16,7 +17,7 @@ function Console(props) {
   );
 
   if (!console) {
-    return <p>Loading...</p>;
+    return <Loader type="ThreeDots" color="#00BFFF" height={80} width={80} />;
   }
 
   return (

@@ -6,7 +6,6 @@ import Home from "./components/Home";
 import Consoles from "./components/Consoles";
 import Lookup from "./components/Lookup";
 
-import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
