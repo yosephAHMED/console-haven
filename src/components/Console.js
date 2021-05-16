@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Loader from "react-loader-spinner";
 
 function Console(props) {
@@ -21,12 +22,34 @@ function Console(props) {
   }
 
   return (
-    <div>
-      <img src={console.image} alt={console.name} />
-      <h1>{console.name}</h1>
-      <h2>{console.price}</h2>
-      <p>{console.country}</p>
-      <p>{console.releaseYear}</p>
+    <div className="container-sm">
+      <div className="card bg-primary my-5">
+        <img src={console.image} className="card-img-top" alt={console.name} />
+        <div className="card-body">
+          <h1 className="card-title display-3">{console.name}</h1>
+        </div>
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item font-weight-bold">
+            Price: ${console.price}
+          </li>
+          <li className="list-group-item">Country: {console.country}</li>
+          <li className="list-group-item">
+            Release Year: {console.releaseYear}
+          </li>
+        </ul>
+        <div className="card-body row d-flex justify-content-center">
+          <Link to="#">
+            <button type="button" className="btn btn-success mr-2">
+              Bookmark
+            </button>
+          </Link>
+          <Link to="#">
+            <button type="button" className="btn btn-danger ml-2">
+              Add to Cart
+            </button>
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import Loader from "react-loader-spinner";
 import Console from "./Console";
+import "./Consoles.css";
 
 function Consoles() {
   const [consoles, setConsoles] = useState([]);
@@ -23,7 +24,13 @@ function Consoles() {
     return (
       <div>
         <Console selectedConsole={selectedConsole} />
-        <button onClick={() => setSelectedConsole(null)}>Reset</button>
+        <button
+          type="button"
+          className="btn btn-warning btn-lg btn-block"
+          onClick={() => setSelectedConsole(null)}
+        >
+          Go Back
+        </button>
       </div>
     );
   }
@@ -33,7 +40,7 @@ function Consoles() {
   }
 
   return (
-    <div className="container">
+    <div className="container-fluid vh-100">
       <div className="row pt-5">
         {consoles.map(function (console) {
           return (
